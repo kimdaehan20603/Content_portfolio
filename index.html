@@ -347,8 +347,7 @@
         
         /* 성과(Outcome) 카드 스타일 */
         .outcome-container {
-            display: grid;
-            gap: 15px;
+            display: gap: 15px;
             margin-bottom: 30px;
         }
         
@@ -360,6 +359,7 @@
             box-shadow: 4px 4px 0 var(--black);
             font-size: 16px;
             font-weight: 600;
+            margin-bottom: 15px;
         }
         
         .outcome-card h4 {
@@ -438,6 +438,51 @@
             text-align: center;
             font-family: 'Space Mono', 'Noto Sans KR', sans-serif;
         }
+
+        /* 프로젝트 상단 태그와 버튼을 정렬하기 위한 스타일 추가 */
+        .project-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .project-tags-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        /* 네오 브루탈리즘 프로젝트별 링크 버튼 기본 클래스 */
+        .project-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--black);
+            font-family: 'Space Mono', 'Noto Sans KR', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 2px solid var(--black);
+            border-radius: 8px;
+            box-shadow: 4px 4px 0 var(--black);
+            text-decoration: none;
+            transition: all 0.1s ease;
+        }
+
+        .project-link-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        /* 프로젝트별 컬러 지정 */
+        .project-link-btn.btn-cyan { background-color: var(--cyan); }
+        .project-link-btn.btn-yellow { background-color: var(--yellow); }
+        .project-link-btn.btn-pink { background-color: var(--pink); }
+        .project-link-btn.btn-green { background-color: var(--green); }
+        .project-link-btn.btn-purple { background-color: var(--purple); color: var(--white); }
 
         .ending-section {
             background-color: var(--black);
@@ -573,14 +618,22 @@
             </div>
         </section>
 
-        <!-- PROJECT 01 (기존 2번: 타깃 맞춤 콘텐츠 실험) -->
+        <!-- PROJECT 01 (Cyan) -->
         <div class="folder-wrapper">
             <div class="folder-tab" style="background-color: var(--cyan); color: var(--black);">PROJECT 01</div>
             <div class="folder-content">
-                <span class="tag blue">A/B Test</span>
-                <span class="tag blue">Threads</span>
-                <span class="tag blue">Instagram</span>
-                <span class="tag blue">Trends</span>
+                <div class="project-top-row">
+                    <div class="project-tags-group">
+                        <span class="tag blue">A/B Test</span>
+                        <span class="tag blue">Threads</span>
+                        <span class="tag blue">Instagram</span>
+                        <span class="tag blue">Trends</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1Q4opeF7O8AAN3uYr3E-hNDnmdhyk68Cb?usp=drive_link" target="_blank" class="project-link-btn btn-cyan">
+                        <span>프로젝트 보기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -609,7 +662,7 @@
                     </ul>
                 </div>
 
-                <div석 id="p1-result" class="tab-pane">
+                <div id="p1-result" class="tab-pane">
                     <div class="outcome-container">
                         <div class="outcome-card">
                             <h4>도달률 3배 이상 상승</h4>
@@ -631,17 +684,25 @@
                             <div class="window-caption">💡 독자 반응을 이끌어낸 트렌드 잭킹 콘텐츠 제작 및 데이터 인사이트 분석</div>
                         </div>
                     </div>
-                </div석
+                </div>
             </div>
         </div>
 
-        <!-- PROJECT 02 (기존 1번: 실전 MarTech & 퍼포먼스 마케팅) -->
+        <!-- PROJECT 02 (Yellow) -->
         <div class="folder-wrapper">
             <div class="folder-tab" style="background-color: var(--yellow); color: var(--black);">PROJECT 02</div>
             <div class="folder-content">
-                <span class="tag yellow">GA4</span>
-                <span class="tag yellow">Meta Pixel</span>
-                <span class="tag yellow">GAS 자동화</span>
+                <div class="project-top-row">
+                    <div class="project-tags-group">
+                        <span class="tag yellow">GA4</span>
+                        <span class="tag yellow">Meta Pixel</span>
+                        <span class="tag yellow">GAS 자동화</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1ntuw1aS7c6OfQfR598oeAbpX_OZ_dEUx?usp=drive_link" target="_blank" class="project-link-btn btn-yellow">
+                        <span>프로젝트 보기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -674,11 +735,11 @@
                     <div class="outcome-container">
                         <div class="outcome-card">
                             <h4>효율적 트래픽 유입</h4>
-                            <p>18~34 타깃 맞춤 숏폼 소재 최적화를 통해 <strong>CTR 4.30%</strong> 및 <strong>랜딩 조회당 비용 114원</strong> 달성</br>▶다만 초기 클릭률과 유입 비용이 우수하다고 해서 무조건 최종 전환까지 이어지는 것은 아니며, 클릭을 유발한 기대감이 랜딩 페이지 첫 화면까지 매끄럽게 연결되는 설계가 필요하다는 것을 깨달음</p>
+                            <p>18~34 타깃 맞춤 숏폼 소재 최적화를 통해 <strong>CTR 4.30%</strong> 및 <strong>랜딩 조회당 비용 114원</strong> 달성<br>▶다만 초기 클릭률과 유입 비용이 우수하다고 해서 무조건 최종 전환까지 이어지는 것은 아니며, 클릭을 유발한 기대감이 랜딩 페이지 첫 화면까지 매끄럽게 연결되는 설계가 필요하다는 것을 깨달음</p>
                         </div>
                         <div class="outcome-card">
                             <h4>전환 병목 및 소재 효율 개선</h4>
-                            <p>리드 획득 단계 <strong>이탈률 86.3%에서 68.1%로 개선</strong> 및 2차 소재 개선으로 <strong>CPL 293원에서 121원으로 절감</strong></br>▶유입 단계에서 고관여 유저를 필터링 할 수 있는 퍼널의 연결성을 이해하고, 더 단계별 이탈을 파악할 수 있는 추적 포인트를 페이지나 문항 별로 세밀하게 심어야겠다고 느낌</p>
+                            <p>리드 획득 단계 <strong>이탈률 86.3%에서 68.1%로 개선</strong> 및 2차 소재 개선으로 <strong>CPL 293원에서 121원으로 절감</strong><br>▶유입 단계에서 고관여 유저를 필터링 할 수 있는 퍼널의 연결성을 이해하고, 더 단계별 이탈을 파악할 수 있는 추적 포인트를 페이지나 문항 별로 세밀하게 심어야겠다고 느낌</p>
                         </div>
                     </div>
                     <div class="window-ui">
@@ -696,14 +757,22 @@
             </div>
         </div>
 
-        <!-- PROJECT 03 -->
+        <!-- PROJECT 03 (Pink) -->
         <div class="folder-wrapper">
             <div class="folder-tab" style="background-color: var(--pink); color: var(--black);">PROJECT 03</div>
             <div class="folder-content">
-                <span class="tag pink">Funnel</span>
-                <span class="tag pink">Media Mix</span>
-                <span class="tag pink">Figma</span>
-                <span class="tag pink">Gen AI</span>
+                <div class="project-top-row">
+                    <div class="project-tags-group">
+                        <span class="tag pink">Funnel</span>
+                        <span class="tag pink">Media Mix</span>
+                        <span class="tag pink">Figma</span>
+                        <span class="tag pink">Gen AI</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1zPb_457ulrjY5abEHQXiK8G4xCxXBrMA?usp=drive_link" target="_blank" class="project-link-btn btn-pink">
+                        <span>프로젝트 보기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -758,13 +827,21 @@
             </div>
         </div>
 
-        <!-- PROJECT 04 -->
+        <!-- PROJECT 04 (Green) -->
         <div class="folder-wrapper">
             <div class="folder-tab" style="background-color: var(--green); color: var(--black);">PROJECT 04</div>
             <div class="folder-content">
-                <span class="tag green">Campaign</span>
-                <span class="tag green">Interactive Video</span>
-                <span class="tag green">Generative AI</span>
+                <div class="project-top-row">
+                    <div class="project-tags-group">
+                        <span class="tag green">Campaign</span>
+                        <span class="tag green">Interactive Video</span>
+                        <span class="tag green">Generative AI</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1N_gMLw1yHH-39ROUty1s0-VcnHbweX3Q?usp=drive_link" target="_blank" class="project-link-btn btn-green">
+                        <span>프로젝트 보기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -819,13 +896,21 @@
             </div>
         </div>
 
-        <!-- PROJECT 05 -->
+        <!-- PROJECT 05 (Purple) -->
         <div class="folder-wrapper">
-            <div class="folder-tab" style="background-color: var(--purple); color: var(--black);">PROJECT 05</div>
+            <div class="folder-tab" style="background-color: var(--purple); color: var(--white);">PROJECT 05</div>
             <div class="folder-content">
-                <span class="tag purple">Business Analysis</span>
-                <span class="tag purple">KPI Rebuilding</span>
-                <span class="tag purple">UX / UI</span>
+                <div class="project-top-row">
+                    <div class="project-tags-group">
+                        <span class="tag purple">Business Analysis</span>
+                        <span class="tag purple">KPI Rebuilding</span>
+                        <span class="tag purple">UX / UI</span>
+                    </div>
+                    <a href="https://www.naver.com" target="_blank" class="project-link-btn btn-purple">
+                        <span>프로젝트 보기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -883,8 +968,7 @@
 
     <section class="ending-section">
         <h2>I Design SYNERGY</h2>
-        <p>내가 좋아하는 것들을 남들도 좋아할 수 있도록, 또한 오랫동안 마음에 남을 수 있는 콘텐츠를 만들 수 있는 마케터가 되고 싶습니다.
-<br></p>
+        <p>내가 좋아하는 것들을 남들도 좋아할 수 있도록, 또한 오랫동안 마음에 남을 수 있는 콘텐츠를 만들 수 있는 마케터가 되고 싶습니다.<br></p>
         <div class="contact-box">
             <i class="fa-solid fa-envelope" style="margin-right:10px;"></i> han0944@kakao.com<br>
             <i class="fa-solid fa-mobile-screen-button" style="margin-right:10px;"></i> 010-5482-0944
